@@ -11,7 +11,7 @@ Based on the channel model definitions, the **Rician K-factor** and **RMS Delay 
 *Why:* The given channel model specifies a Rician K-factor of 9 dB (strong dominant path) and a shorter exponential delay decay (30 ns) for LOS, compared to a K-factor of 0 dB (no dominant path) and a longer delay decay (100 ns) for NLOS. The RMS delay spread effectively captures this stark difference in the delay decay profile. The K-factor also separates them well, but can be highly sensitive to noise at low SNRs.
 
 **2. Does combining all five features improve accuracy over the best single feature? At which SNR values is the improvement most noticeable?**
-Yes, combining all five features improves accuracy over using just the best single feature. The improvement is most noticeable at **low-to-medium SNR values** (e.g., 0 dB to 15 dB). At these levels, high noise variance distorts individual features (making boundaries overlap), but a combination in a higher-dimensional space allows the SVM to find a more robust separating hyperplane.
+Yes, combining all five features improves accuracy over using just the best single feature. The improvement is most noticeable at **5 dB**, where SVM-6 is about 8.75 percentage points above the best single feature. The gaps are about 2.0 points at 0 dB, 4.0 points at 10 dB, and 1.25-2.0 points from 15-30 dB. At low-to-medium SNR, noise distorts individual features, while the combined feature space gives the SVM a more robust decision boundary.
 
 **3. One of the five features is likely to perform poorly at low SNR even though it is physically meaningful. Which one, and why?**
 **Kurtosis** performs poorly at very low SNR. 
